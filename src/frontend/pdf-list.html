@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- <body class="bg-gray-900 text-white p-6 min-h-screen"> -->
+
+<!-- </head> -->
+<!-- <body class="bg-gradient-to-br from-blue-700 via-purple-800 to-indigo-900 text-white font-sans"> -->
+  <body class = "bg-sky-800  min-h-screen" >
+
+  <!-- Header Section -->
+  <header class="bg-white/20 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <h1 class="text-4xl font-bold font-mono">
+        <span class="text-red-500 drop-shadow-md">Edu</span><span class="text-gray-900 drop-shadow-md">Past</span>
+      </h1>
+    </div>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex gap-8 text-sm font-semibold text-gray-800">
+      <li><a href="./home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="./AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+    </ul>
+
+    <!-- Desktop Login -->
+    <div class="hidden md:block">
+      <a href="./loginPage/login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Login</a>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="md:hidden">
+      <button id="menuToggle" class="text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+    <ul class="flex flex-col gap-4 text-sm font-semibold text-gray-800">
+      <li><a href="./home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="./AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+      <li><a href="./loginPage/login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition w-max">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+
+
+  <div class="max-w-4xl mx-auto mt-8">
+    <h1 id="pageTitle" class="text-3xl font-bold text-white mb-8 text-center">PDFs</h1>
+    <div id="pdfList" class="space-y-4">
+      <!-- PDFs will be listed here -->
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const branch = params.get("branch");
+    const sem = params.get("sem");
+
+    const pageTitle = document.getElementById("pageTitle");
+    const pdfList = document.getElementById("pdfList");
+
+    if (branch && sem) {
+      pageTitle.textContent = `${branch.toUpperCase()} - Semester ${sem} PDFs`;
+
+      fetch(`/api/pdf?branch=${branch}&semester=${sem}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success && data.data.length > 0) {
+            data.data.forEach(pdf => {
+              const link = document.createElement('a');
+              link.href = pdf.PDF_Path; // example: /pdfs/civil/sem4/Mechanics2024.pdf
+              link.target = "_blank";
+              link.className = "block bg-white text-black px-4 py-3 rounded shadow hover:bg-gray-200 transition font-semibold ";
+              link.textContent = `${pdf.pdf_title} (${pdf.year})`;
+              pdfList.appendChild(link);
+            });
+          } else {
+            pdfList.innerHTML = "<p class='text-gray-300'>No PDFs available.</p>";
+          }
+        })
+        .catch(err => {
+          pdfList.innerHTML = "<p class='text-red-400'>Error loading PDFs.</p>";
+        });
+
+    } else {
+      pageTitle.textContent = "Invalid Parameters";
+    }
+  </script>
+  <script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+
+</body>
+</html>

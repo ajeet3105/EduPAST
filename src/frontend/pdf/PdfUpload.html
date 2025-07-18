@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Branch PDF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center p-6">
+
+  <form 
+    action="/api/profile"
+    method="POST" 
+    enctype="multipart/form-data"
+    class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full"
+  >
+    <h2 class="text-2xl font-bold mb-6 text-center">Upload Mid-Sem PDF</h2>
+
+    <!-- Branch Select -->
+    <label for="Branch" class="block mb-2 font-semibold">Select Branch:</label>
+    <select name="Branch" id="Branch" required class="w-full p-2 mb-4 rounded text-black">
+      <option value="" disabled selected>Select Branch</option>
+      <option value="cse">CSE</option>
+      <option value="iot">IOT</option>
+      <option value="it">IT</option>
+      <option value="ai_ds">AI & DS</option>
+      <option value="civil">CIVIL</option>
+      <option value="mechanical">MECHANICAL</option>
+      <option value="electronic">ELECTRONIC</option>
+      <option value="chemical">CHEMICAL</option>
+    </select>
+
+    <!-- Semester -->
+    <label for="sem" class="block mb-2 font-semibold">Semester (1 - 8):</label>
+    <input type="number" name="sem" id="sem" min="1" max="8" required class="w-full p-2 mb-4 rounded text-black" placeholder="e.g. 4" />
+
+    <!-- PDF Title -->
+    <label for="pdf_title" class="block mb-2 font-semibold">PDF Title:</label>
+    <input type="text" name="pdf_title" id="pdf_title" required class="w-full p-2 mb-4 rounded text-black" placeholder="e.g. DSA Midsem Paper" />
+
+    <!-- Year -->
+    <label for="year" class="block mb-2 font-semibold">Year:</label>
+    <input type="number" name="year" id="year" min="2000" max="2099" required class="w-full p-2 mb-4 rounded text-black" placeholder="e.g. 2024" />
+
+    <!-- PDF File Input -->
+    <label for="pdf" class="block mb-2 font-semibold">Select PDF File:</label>
+    <input type="file" name="pdf" id="pdf" accept="application/pdf" required class="w-full p-2 mb-6 rounded text-white"/>
+
+    <!-- Submit -->
+    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded">
+      Upload PDF
+    </button>
+  </form>
+
+</body>
+</html>

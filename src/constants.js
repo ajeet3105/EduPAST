@@ -1,0 +1,1 @@
+export  const NAME_of_DB = "mid_sem_paper";

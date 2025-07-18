@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPast | B.Tech Branches</title>
+    <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class = "bg-sky-800  min-h-screen" >
+
+  <!-- Header Section -->
+  <header class="bg-white/20 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <h1 class="text-4xl font-bold font-mono">
+        <span class="text-red-500 drop-shadow-md">Edu</span><span class="text-gray-900 drop-shadow-md">Past</span>
+      </h1>
+    </div>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex gap-8 text-sm font-semibold text-gray-800" id="navbarLinks">
+      <li><a href="./home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="./AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+    </ul>
+
+    <!-- Desktop Login -->
+    <div class="hidden md:block">
+      <a href="./loginPage/login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Login</a>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="md:hidden">
+      <button id="menuToggle" class="text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+    <ul class="flex flex-col gap-4 text-sm font-semibold text-gray-800">
+      <li><a href="./home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="./AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+      <li><a href="./loginPage/login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition w-max">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+
+   <div class="relative isolate ">
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="mx-auto max-w-2xl py-32 sm:py-40 lg:py-38">
+      <div class="text-center">
+        <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Explore Previous Mid Semester Papers</h1>
+              <p class="mt-8 text-lg font-medium text-pretty text-yellow-200 sm:text-xl/8">Find and revise important questions for every B.Tech branch. Start preparing smartly with EduPast's curated mid sem collection.</p>
+
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="#branch-cards" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500">
+            Get Started
+          </a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="branch-cards" class="mt-20">
+  <!-- Branch Cards -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <h3 class="text-3xl font-bold text-center text-white mb-12">Explore B.Tech Branches</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      
+      <!-- Card Component -->
+      <a href="./branch.html?branch=cse" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/cse.jpg" alt="CSE" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">CSE</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=iot" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/iot.webp" alt="IOT" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">IOT</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=it" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/IT.webp" alt="IT" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">IT</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=ai_ds" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/AI_DS.webp" alt="AI & DS" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">AI & DS</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=civil"  aria-label="View Civil branch PDFs" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/civil.jpg" alt="Civil" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">Civil</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=mechanical" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/mechanical.jpg" alt="Mechanical" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-2xl font-bold drop-shadow-lg">Mechanical</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=electronic" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/electronic.jpg" alt="Electronic" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">Electronic</h2>
+        </div>
+      </a>
+
+      <a href="./branch.html?branch=chemical" class="relative h-64 rounded-xl overflow-hidden shadow-lg group">
+        <img src="./HeroImage/chemical.jpg" alt="Chemical" class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition duration-500 ease-in-out" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h2 class="text-white text-3xl font-bold drop-shadow-lg">Chemical</h2>
+        </div>
+      </a>
+    </div>
+  </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-sm py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-bold text-white mb-3">EduPast</h4>
+        <p>Empowering Students with Knowledge & Opportunities.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Explore</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Branches</a></li>
+          <li><a href="#" class="hover:underline">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Follow Us</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">GitHub</a></li>
+          <li><a href="#" class="hover:underline">Discord</a></li>
+          <li><a href="#" class="hover:underline">Twitter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-8 border-t border-gray-700 pt-6">
+      <p>© 2025 EduPast. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+ </script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("/api/me", {
+        method: "GET",
+        credentials: "include" // important to send cookies
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        // Admin is logged in
+        const navList = document.getElementById("navbarLinks");
+        const uploadLi = document.createElement("li");
+
+        uploadLi.innerHTML = `<a href="/pdf/PdfUpload.html" class="hover:text-red-500 transition">Upload PDF</a>`;
+        navList.appendChild(uploadLi);
+      }
+
+         const mobileMenu = document.querySelector("#mobileMenu ul");
+
+        const uploadMobile = document.createElement("li");
+        uploadMobile.innerHTML = `<a href="/pdf/PdfUpload.html" class="hover:text-red-500 transition">Upload PDF</a>`;
+        mobileMenu.appendChild(uploadMobile);
+
+    } catch (err) {
+      console.error("Admin not logged in or token missing");
+    }
+  });
+</script>
+
+
+<script>
+  // Show success alert if redirected after PDF upload
+  const urlParams = new URLSearchParams(window.location.search);
+  const uploadSuccess = urlParams.get("upload");
+
+  if (uploadSuccess === "success") {
+    alert("PDF uploaded successfully!");
+  }
+</script>
+
+
+</body>
+</html>

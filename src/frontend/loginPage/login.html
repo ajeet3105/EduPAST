@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduPast | Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-sky-800 min-h-screen">
+
+
+<header class="bg-white/20 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+    
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <h1 class="text-4xl font-bold font-mono">
+        <span class="text-red-500 drop-shadow-md">Edu</span><span class="text-gray-900 drop-shadow-md">Past</span>
+      </h1>
+    </div>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex gap-8 text-sm font-semibold text-gray-800">
+      <li><a href="../home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="../AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+    </ul>
+
+    <!-- Desktop Login -->
+    <div class="hidden md:block">
+      <a href="../loginPage/login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Login</a>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="md:hidden">
+      <button id="menuToggle" class="text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+    <ul class="flex flex-col gap-4 text-sm font-semibold text-gray-800">
+      <li><a href="../home1.html" class="hover:text-red-500 transition">Home</a></li>
+      <li><a href="../AboutPage/about.html" class="hover:text-red-500 transition">About</a></li>
+      <li><a href="#" class="hover:text-red-500 transition">Contact</a></li>
+      <li><a href="login.html" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition w-max">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<div class="flex flex-col md:flex-row min-h-[calc(100vh-80px)]">
+    
+    <!-- Image Section -->
+    <div class="md:w-1/2 h-64 md:h-full">
+      <img src="../loginPage/loginPhoto.jpg"
+           alt="Login Image"
+           class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Login Form -->
+    <div class="md:w-1/2 flex items-center justify-center p-8">
+      <div class="bg-white p-8 rounded-lg w-full max-w-md shadow-xl text-black">
+        <h2 class="text-2xl font-bold mb-6 text-center">Login to EduPast</h2>
+        <form action="/api/admin/login" method="POST">
+          <div class="mb-4">
+            <label for="usename" class="block font-semibold mb-1">username</label>
+            <input type="text" id="fullName" name="fullName" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" required>
+          </div>
+
+          <div class="mb-4">
+            <label for="password" class="block font-semibold mb-1">Password</label>
+            <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" required>
+          </div>
+
+          <div class="mb-4 flex items-center">
+            <input type="checkbox" id="remember" name="remember" class="mr-2">
+            <label for="remember" class="text-sm">Remember Me</label>
+          </div>
+
+          <div class="mb-4 text-sm text-right">
+            <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition">
+            Login
+          </button>
+        </form>
+
+        <!-- <div class="mt-6 text-center text-sm">
+          Don’t have an account? <a href="#" class="text-blue-500 hover:underline">Sign up here</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+ <footer class="bg-gray-900 text-gray-300 text-sm py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-bold text-white mb-3">EduPast</h4>
+        <p>Empowering Students with Knowledge & Opportunities.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Explore</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Branches</a></li>
+          <li><a href="#" class="hover:underline">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Follow Us</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">GitHub</a></li>
+          <li><a href="#" class="hover:underline">Discord</a></li>
+          <li><a href="#" class="hover:underline">Twitter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-3">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-8 border-t border-gray-700 pt-6">
+      <p>© 2025 EduPast. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+</body>
+</html>

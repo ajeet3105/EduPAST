@@ -65,7 +65,7 @@ git push origin feature/my-feature
 ### 5. Open a Pull Request
 ## 📬 Contact
 ### For queries or suggestions:
-✉️ Email: ajeetkumarkb02@example.com
+✉️ Email: ajeetkumarkb02@gmail.com
 ## Thank you for visiting this repository! We hope this project helps you in your academic endeavors.
 
 

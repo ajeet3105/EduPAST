@@ -9,7 +9,7 @@ dotenv.config({
 
 
 contectDataBase().then(()=>{
-    app.listen(process.env.PORT || 6600, ()=>{
+    app.listen(process.env.PORT, ()=>{
         console.log(`Server is running at port ${process.env.PORT}`);
     })
 })

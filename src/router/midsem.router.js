@@ -36,10 +36,24 @@ router.get("/pdf", async (req, res) => {
       sem: parseInt(semester),
     });
 
-    res.status(200).json({
+    const baseUrl = `${req.protocol}://${req.get("host")}`;
+
+    const updatedResults = results.map(pdf => ({
+      ...pdf._doc,
+      PDF_Path: `${baseUrl}${pdf.PDF_Path}` // 👈 convert relative to full URL
+    }));
+
+    return res.status(200).json({
       success: true,
-      data: results,
+      data: updatedResults,
     });
+
+
+
+    // res.status(200).json({
+    //   success: true,
+    //   data: results,
+    // });
 
   } catch (err) {
     res.status(500).json({

@@ -74,7 +74,7 @@ router.post("/login", async (req,res) =>{
   //   message: "Login successful", 
   //   token });
     //  Redirect to home page after login
-    return res.redirect("/home1.html");
+    return res.redirect("/index.html");
     // return res.redirect("/pdf/Upload.html")
 
  //  Token Cookie Me Store Ho Jayega

@@ -32,7 +32,7 @@ const {Branch, sem, year, pdf_title} = req.body;
       PDF_Path: fullUrl,
     })
 // return res.redirect("/home1.html")
-return res.redirect("/home1.html?upload=success");
+return res.redirect("/index.html?upload=success");
 
 //  res.status(201).json({
 //       success: true,

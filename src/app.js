@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "../public/frontend")));
 app.use('/pdfs', express.static(path.join(__dirname, '../public/temp')));
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname, "../public/frontend/home1.html"));
+    res.sendFile(path.join(__dirname, "../public/frontend/index.html"));
 })
 // app.get("/test", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../public/temp/bonafide.pdf"));

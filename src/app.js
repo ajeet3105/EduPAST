@@ -25,13 +25,13 @@ const __dirname = path.dirname(__filename);
 console.log(__dirname);
 console.log(__filename)
 
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "../public/frontend")));
 
 
 app.use('/pdfs', express.static(path.join(__dirname, '../public/temp')));
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname, "/frontend/home1.html"));
+    res.sendFile(path.join(__dirname, "../public/frontend/home1.html"));
 })
 // app.get("/test", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../public/temp/bonafide.pdf"));

@@ -36,24 +36,24 @@ router.get("/pdf", async (req, res) => {
       sem: parseInt(semester),
     });
 
-    const baseUrl = `${req.protocol}://${req.get("host")}`;
+    // const baseUrl = `${req.protocol}://${req.get("host")}`;
 
-    const updatedResults = results.map(pdf => ({
-      ...pdf._doc,
-      PDF_Path: `${baseUrl}${pdf.PDF_Path}` // 👈 convert relative to full URL
-    }));
+    // const updatedResults = results.map(pdf => ({
+    //   ...pdf._doc,
+    //   PDF_Path: `${baseUrl}${pdf.PDF_Path}` // 👈 convert relative to full URL
+    // }));
 
-    return res.status(200).json({
-      success: true,
-      data: updatedResults,
-    });
-
-
-
-    // res.status(200).json({
+    // return res.status(200).json({
     //   success: true,
-    //   data: results,
+    //   data: updatedResults,
     // });
+
+
+    // If you're already storing full URL in DB, just return it directly
+      return res.status(200).json({
+      success: true,
+      data: results,
+    });
 
   } catch (err) {
     res.status(500).json({

@@ -19,8 +19,8 @@ const {Branch, sem, year, pdf_title} = req.body;
     
  // Make relative URL path for frontend (e.g. /pdfs/civil/sem4/file.pdf)
     const fileName = req.file.filename;
-    const relativePath = `/pdfs/${fileName}`;  // this should match your express.static() route
-   // const fullUrl = `${req.protocol}://${req.get('host')}/pdfs/${fileName}`;
+   //  const relativePath = `/pdfs/${fileName}`;  // this should match your express.static() route
+   const fullUrl = `${req.protocol}://${req.get('host')}/pdfs/${fileName}`;
 
  
 
@@ -29,8 +29,8 @@ const {Branch, sem, year, pdf_title} = req.body;
       sem: parseInt(sem),
       year,
       pdf_title,
-      // PDF_Path: fullUrl,
-      PDF_Path:relativePath,
+      PDF_Path: fullUrl,
+      // PDF_Path:relativePath,
     })
 // return res.redirect("/home1.html")
 return res.redirect("/index.html?upload=success");

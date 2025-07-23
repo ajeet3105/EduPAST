@@ -56,7 +56,7 @@ router.post("/login", async (req,res) =>{
      const isMatch = await admin.isPasswordCorrect(password)
      if(!isMatch)
      {
-        return req.status(401).send("Invalid fullName or password")
+        return res.status(401).send("Invalid fullName or password")
      }
 
     const token =  admin.generateAccessToken()

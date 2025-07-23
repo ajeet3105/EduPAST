@@ -207,14 +207,14 @@
 
         uploadLi.innerHTML = `<a href="/pdf/PdfUpload.html" class="hover:text-red-500 transition">Upload PDF</a>`;
         navList.appendChild(uploadLi);
-      }
+      
 
          const mobileMenu = document.querySelector("#mobileMenu ul");
 
         const uploadMobile = document.createElement("li");
         uploadMobile.innerHTML = `<a href="/pdf/PdfUpload.html" class="hover:text-red-500 transition">Upload PDF</a>`;
         mobileMenu.appendChild(uploadMobile);
-
+      }
     } catch (err) {
       console.error("Admin not logged in or token missing");
     }

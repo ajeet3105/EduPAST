@@ -1,55 +1,40 @@
 import { newmidSemPdf } from "../model/pdf.models.js";
 
 
-const uploadpdf = async (req,res)=>
-{
-  try{
-    const pdflocalfilepath = req.file?.path;
-    if(!pdflocalfilepath)
-    {
-       return res
-       .status(400)
-       .json({
-        success:false,
-        message: "pdfloacalpath is required",
-       })
+
+
+const uploadpdf = async (req, res) => {
+  try {
+
+    console.log(req.file);
+
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: "File not uploaded",
+      });
     }
-    
-const {Branch, sem, year, pdf_title} = req.body;
-    
- // Make relative URL path for frontend (e.g. /pdfs/civil/sem4/file.pdf)
-    const fileName = req.file.filename;
-   //  const relativePath = `/pdfs/${fileName}`;  // this should match your express.static() route
-   const fullUrl = `${req.protocol}://${req.get('host')}/pdfs/${fileName}`;
 
- 
+    const cloudinaryFileUrl = req.file.path;
 
-    const results= await newmidSemPdf.create({
+    const { Branch, sem, year, pdf_title } = req.body;
+
+    const results = await newmidSemPdf.create({
       Branch: Branch.toLowerCase(),
       sem: parseInt(sem),
       year,
       pdf_title,
-      PDF_Path: fullUrl,
-      // PDF_Path:relativePath,
-    })
-// return res.redirect("/home1.html")
-return res.redirect("/index.html?upload=success");
+      PDF_Path: cloudinaryFileUrl,
+    });
 
-//  res.status(201).json({
-//       success: true,
-//       message: "uploaded successfully",
-//       data:results,
-//     });
+    return res.redirect("/index.html?upload=success");
 
-  }
-  catch(error)
-  {
-     res.status(400)
-     .json({
-        success:false,
-        message:"server error",
-        error:error.message,
-     });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "server error",
+      error: error.message,
+    });
   }
 };
 

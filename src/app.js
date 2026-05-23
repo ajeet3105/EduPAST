@@ -28,7 +28,7 @@ console.log(__filename)
 app.use(express.static(path.join(__dirname, "../public/frontend")));
 
 
-app.use('/pdfs', express.static(path.join(__dirname, '../public/temp')));
+// app.use('/pdfs', express.static(path.join(__dirname, '../public/temp')));
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, "../public/frontend/index.html"));
